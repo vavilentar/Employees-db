@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style.css">
+	<title>Employees</title>
+</head>
+<body>
+	<header>
+		<div class="header header__container">
+			<div class="nav-menu">
+				<a href="../index.html" class="nav-menu_item">Главная</a>
+				<a href="../work-table/index.html" class="nav-menu_item">Таблица работ</a>
+				<a href="./index.html" class="nav-menu_item">Список сотрудников</a>
+				<a href="" class="nav-menu_item">Список рабочих мест</a>
+				<a href="" class="nav-menu_item">Настройки</a>
+			</div>
+		</div>
+	</header>
+	<main>
+		<form action="" class="new-employee-form">
+			<input placeholder="ФИО полностью" type="text" class="emp-name">
+			<input class="emp-birth" type="date">
+			<button class="emp-add-btn">Записать</button>
+		</form>
+
+		<table class="employees-table">
+			<tr>
+				<th class="id">#</th>
+				<th>Фамилия</th>
+				<th>Имя</th>
+				<th>Отчество</th>
+				<th>Дата рождения</th>
+			</tr>
+		</table>
+		<form class="delete-item-form">
+			<input required placeholder="ID Записи" type="text" class="inputDelete">
+			<button class="deleteBtn">Удалить запись</button>
+		</form>
+	</main>
+
+	<script src="./script.js"></script>
+</body>
+</html>

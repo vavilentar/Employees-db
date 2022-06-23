@@ -1,0 +1,63 @@
+@import url(../styles/generalStyles.css);
+@import url(../styles/headerStyle.css);
+
+table {
+	border: 1px solid grey;
+	margin-top: 10px;
+}
+
+button {
+	font-family: Ubuntu;
+	background-color:aquamarine;
+	cursor: pointer;
+}
+
+th {
+	background-color:aquamarine;
+	/* border-bottom: 1px solid grey; */
+	width: 150px;
+	height: 30px;
+}
+
+td {
+	width: 150px;
+	font-size: 0.8em;
+}
+
+form {
+	margin-top: 10px;
+}
+
+tr:nth-child(odd) {
+	background-color: rgb(224, 224, 224);
+}
+
+.id {
+	width: 20px;
+}
+
+@media (max-width: 426px) {
+	body {
+		margin: 0 10px;
+	}
+}
+
+.emp-name, .emp-birth, .emp-add-btn, .inputDelete, .deleteBtn {
+	border: 1px solid black;
+	height: 30px;
+}
+.emp-name, .emp-birth {
+	padding: 0px 10px;
+}
+
+.emp-add-btn {
+	width: 100px;
+}
+.inputDelete {
+	padding: 0px 10px;
+	height: 30px;
+}
+.deleteBtn {
+	height: 30px;
+	width: 120px;
+}

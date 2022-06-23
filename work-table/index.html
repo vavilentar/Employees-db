@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style.css">
+	<title>Employees table</title>
+</head>
+
+<body>
+
+	<header>
+		<div class="header header__container">
+			<div class="nav-menu">
+				<a href="../index.html" class="nav-menu_item">Главная</a>
+				<a href="./index.html" class="nav-menu_item">Таблица работ</a>
+				<a href="../employeesList/index.html" class="nav-menu_item">Список сотрудников</a>
+				<a href="" class="nav-menu_item">Список рабочих мест</a>
+				<a href="" class="nav-menu_item">Настройки</a>
+			</div>
+		</div>
+	</header>
+	<main>
+		<form class="new-item-form">
+			<input type="datetime-local" class="day">
+			<select class="name">
+				<option value="Иванов">Иванов</option>
+				<option value="Петров">Петров</option>
+			</select>
+			<select class="place">
+				<option value="Дом">Дом</option>
+				<option value="Офис">Офис</option>
+			</select>
+			<button class="send">Записать</button>
+		</form>
+		<table class="main-table">
+			<tr>
+				<th class="id">#</th>
+				<th>Дата</th>
+				<th>Время</th>
+				<th>Кто?</th>
+				<th>Где?</th>
+			</tr>
+		</table>
+		<form class="delete-item-form">
+			<input required placeholder="ID Записи" type="text" class="inputDelete">
+			<button class="deleteBtn">Удалить запись</button>
+		</form>
+	</main>
+	<script src="./script.js"></script>
+</body>
+
+</html>

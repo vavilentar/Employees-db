@@ -1,0 +1,38 @@
+
+.time-weather {
+	display: flex;
+	align-items: center;
+	margin-top: 20px;
+	width: 300px;
+	justify-content: space-between;
+}
+
+.clock {
+	position: relative;
+}
+.clock::after {
+	position: absolute;
+	content: '';
+	width: 100%;
+	background-color: black;
+	height: 1px;
+	bottom: -5px;
+}
+
+.weather {
+	position: relative;
+}
+.weather::after{
+	position: absolute;
+	content: '';
+	width: 100%;
+	background-color: black;
+	height: 1px;
+	bottom: -5px;
+}
+
+.stringLine {
+	height: 40px;
+	width: 1px;
+	background-color: black;
+}
