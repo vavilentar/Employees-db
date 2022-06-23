@@ -5,6 +5,8 @@ const loadBtn = document.querySelector('.load-items');
 
 let counter = 1;
 
+loadUsersFromStorage();
+
 // loadBtn.addEventListener('click', (e) => {
 // 	e.preventDefault();
 // 	const inputIdLoad = document.querySelector('.load-item-input');
@@ -102,6 +104,8 @@ function loadUsers(key) {
 
 function loadUsersFromStorage() {
 	let storagedUsers = [];
+	empTable.innerHTML = '';
+	counter = 1;
 
 	for (let i = 1; i <= localStorage.length; i++) {
 		storagedUsers.push(JSON.parse(localStorage.getItem(i)));

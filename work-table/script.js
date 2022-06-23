@@ -2,6 +2,9 @@ const sendBtn = document.querySelector('.send');
 const mainTable = document.querySelector('.main-table');
 const deleteBtn = document.querySelector('.deleteBtn');
 const loadBtn = document.querySelector('.load-items');
+const nameList = document.querySelector('.name');
+
+loadPersonalNames();
 
 let counter = 1;
 
@@ -63,13 +66,14 @@ function deleteTR(id) {
 
 function loadPersonalNames() {
 	let storagedUsers = [];
+	nameList.innerHTML = '';
 
 	for (let i = 1; i <= localStorage.length; i++) {
 		storagedUsers.push(JSON.parse(localStorage.getItem(i)));
 	}
 
 	if (storagedUsers.length > 0) {
-		const nameList = document.querySelector('.name');
+
 		for (let i = 0; i < storagedUsers.length; i++) {
 			let loadedUser = storagedUsers[i];
 			let loadedName = loadedUser.name;
