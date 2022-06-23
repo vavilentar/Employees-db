@@ -60,8 +60,12 @@ tr:nth-child(odd) {
 	width: 120px;
 }
 
-.place, .name, .send {
-	width: 120px;
+.place, .name{
+	width: auto;
+}
+
+.send {
+	width: 70px;
 }
 
 .day {

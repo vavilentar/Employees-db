@@ -75,7 +75,6 @@ function loadPersonalNames() {
 			let loadedName = loadedUser.name;
 
 			let loadedEmp = document.createElement('option');
-			loadedEmp.id = counter;
 			loadedEmp.innerHTML = `
 			<option value=${loadedName}>${loadedName}</option>
 	`;

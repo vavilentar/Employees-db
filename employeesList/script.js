@@ -116,13 +116,14 @@ function loadUsersFromStorage() {
 		loadedEmp.classList.add('emp-note');
 		loadedEmp.id = counter;
 		loadedEmp.innerHTML = `
-		<td class="id">${loadedUser.id}</td>
+		<td class="id">${counter}</td>
 		<td>${loadedName[0]}</td>
 		<td>${loadedName[1]}</td>
 		<td>${loadedName[2]}</td>
 		<td>${loadedUser.birthday}</td>
 	`;
 		empTable.appendChild(loadedEmp);
+		counter++;
 	}
 
 	return counter = storagedUsers.length+1;
