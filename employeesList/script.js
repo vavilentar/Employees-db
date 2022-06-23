@@ -7,17 +7,10 @@ let counter = 1;
 
 loadUsersFromStorage();
 
-// loadBtn.addEventListener('click', (e) => {
-// 	e.preventDefault();
-// 	const inputIdLoad = document.querySelector('.load-item-input');
-// 	loadUsers(inputIdLoad.value);
-// });
-
 loadBtn.addEventListener('click', (e) => {
 	e.preventDefault();
 	loadUsersFromStorage();
 });
-
 
 deleteBtn.addEventListener('click', (e) => {
 	e.preventDefault();

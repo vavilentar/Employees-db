@@ -4,9 +4,11 @@ const deleteBtn = document.querySelector('.deleteBtn');
 const loadBtn = document.querySelector('.load-items');
 const nameList = document.querySelector('.name');
 
-loadPersonalNames();
-
 let counter = 1;
+
+loadPersonalNames();
+// loadLocalCopy();
+
 
 loadBtn.addEventListener('click', (e) => {
 	e.preventDefault();
@@ -57,6 +59,8 @@ function addTR(day, time, name, place) {
 		<td>${place}</td>
 	`;
 	mainTable.appendChild(newTr);
+
+	// createLocalCopy('work', day, time, name, place);
 }
 
 function deleteTR(id) {
@@ -90,3 +94,46 @@ function loadPersonalNames() {
 
 	console.log(storagedUsers);
 }
+
+// function createLocalCopy(id, date, time, emp, type) {
+// 	let workTime = {
+// 		id: id,
+// 		date: date,
+// 		time: time,
+// 		employee: emp,
+// 		workType: type,
+// 	};
+
+// 	localStorage.setItem('w'+ id, JSON.stringify(workTime));
+// }
+
+// function loadLocalCopy() {
+// 	let storagedWorks = [];
+// 	mainTable.innerHTML = '';
+// 	counter = 1;
+
+// 	for (let i = 1; i <= localStorage.length; i++) {
+// 		storagedWorks.push(JSON.parse(localStorage.getItem(i)));
+// 	}
+
+// 	for (let i = 0; i < storagedWorks.length; i++) {
+// 		let loadedWork = storagedWorks[i];
+
+// 		let work = document.createElement('tr');
+// 		work.classList.add('table-note');
+// 		work.id = counter;
+// 		work.innerHTML = `
+// 		<td class="id">${counter}</td>
+// 		<td>${loadedWork.id}</td>
+// 		<td>${loadedWork.date}</td>
+// 		<td>${loadedWork.time}</td>
+// 		<td>${loadedWork.employee}</td>
+// 		<td>${loadedWork.type}</td>
+
+// 	`;
+// 		mainTable.appendChild(work);
+// 		counter++;
+// 	}
+
+// 	return counter = storagedWorks.length + 1;
+// }
