@@ -53,3 +53,4 @@ function deleteTR(id) {
 	const toDelete = document.getElementById(id);
 	toDelete.remove();
 }
+

@@ -42,16 +42,22 @@ tr:nth-child(odd) {
 	}
 }
 
-.emp-name, .emp-birth, .emp-add-btn, .inputDelete, .deleteBtn {
+.emp-name, .emp-birth, .emp-add-btn, .inputDelete, .deleteBtn, .load-items, .load-item-input {
 	border: 1px solid black;
 	height: 30px;
 }
-.emp-name, .emp-birth {
+.emp-name, .emp-birth, .load-item-input {
 	padding: 0px 10px;
 }
 
 .emp-add-btn {
 	width: 100px;
+}
+.load-item-Form{
+	margin-top: 10px;
+}
+.load-items{
+	width: 150px;
 }
 .inputDelete {
 	padding: 0px 10px;

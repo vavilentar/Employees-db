@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
 	<link rel="stylesheet" href="./style.css">
 	<title>Employees</title>
 </head>
+
 <body>
 	<header>
 		<div class="header header__container">
@@ -20,10 +22,14 @@
 		</div>
 	</header>
 	<main>
+		<form class="load-item-Form">
+			<input style="display: none" type="text" class="load-item-input">
+		</form class="load-item-Form">
 		<form action="" class="new-employee-form">
 			<input placeholder="ФИО полностью" type="text" class="emp-name">
 			<input class="emp-birth" type="date">
 			<button class="emp-add-btn">Записать</button>
+			<button class="load-items">Загрузить с сервера</button>
 		</form>
 
 		<table class="employees-table">
@@ -43,4 +49,5 @@
 
 	<script src="./script.js"></script>
 </body>
+
 </html>
