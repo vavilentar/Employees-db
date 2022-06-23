@@ -47,7 +47,7 @@ function addNewEmp(empName, empBirth) {
 		<td>${empName[0]}</td>
 		<td>${empName[1]}</td>
 		<td>${empName[2]}</td>
-		<td>${empBirth}</td>
+		<td>${empBirth.split('-').reverse().join('.')}</td>
 	`;
 	empTable.appendChild(newEmpNote);
 }

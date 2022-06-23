@@ -47,7 +47,8 @@
 }
 .nav-menu_item:hover::before{
 
-	background: linear-gradient(90deg, rgb(94, 185, 155) 0%, rgba(255,255,255,1) 100%);
+	/* background: linear-gradient(90deg, rgb(94, 185, 155) 0%, rgba(255,255,255,1) 100%); */
+	background: rgb(16, 153, 84);
 	transform: translateY(10px);
 	box-shadow:0px 0px 6px rgba(255,255,255,0.7);
 	border-radius: 10px 0 0 10px;
@@ -58,7 +59,8 @@
 
 .nav-menu_item:hover::after{
 
-	background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(94, 185, 155) 100%);
+	/* background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(94, 185, 155) 100%); */
+	background: rgb(16, 153, 84);
 	transform: translateY(10px);
 	box-shadow:0px 0px 6px rgba(255,255,255,0.7);
 	border-radius: 0 10px 10px 0;

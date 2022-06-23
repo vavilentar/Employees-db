@@ -23,10 +23,9 @@ sendBtn.addEventListener('click', (e) => {
 	const placeOf = document.querySelector('.place');
 
 	if (dateTime.value != '') {
-		const dateValue = dateTime.value.split('T')[0];
+		const dateValue = dateTime.value.split('T')[0].split('-').reverse().join('.');
 		const timeValue = dateTime.value.split('T')[1];
 		addTR(dateValue, timeValue, nameOf.value, placeOf.value);
-		// dateTime.value = '';	
 		dateTime.style.backgroundColor = 'white';
 		counter++;
 	} else {
