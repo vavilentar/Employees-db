@@ -5,6 +5,16 @@ const loadBtn = document.querySelector('.load-items');
 
 let counter = 1;
 
+empTable.innerHTML = `
+<tr>
+<th class="id">#</th>
+<th>Фамилия</th>
+<th>Имя</th>
+<th>Отчество</th>
+<th>Дата рождения</th>
+</tr>
+`;
+
 loadUsersFromStorage();
 
 loadBtn.addEventListener('click', (e) => {
@@ -76,28 +86,37 @@ function createLocalCopy(id, name, birthday) {
 	localStorage.setItem(id, JSON.stringify(user));
 }
 
-function loadUsers(key) {
-	let loadedUser = JSON.parse(localStorage.getItem(key));
-	console.log(loadedUser);
+// function loadUsers(key) {
+// 	let loadedUser = JSON.parse(localStorage.getItem(key));
+// 	console.log(loadedUser);
 
-	let loadedName = loadedUser.name.split(' ');
+// 	let loadedName = loadedUser.name.split(' ');
 
-	let loadedEmp = document.createElement('tr');
-	loadedEmp.classList.add('emp-note');
-	loadedEmp.id = counter;
-	loadedEmp.innerHTML = `
-		<td class="id">${loadedUser.id}</td>
-		<td>${loadedName[0]}</td>
-		<td>${loadedName[1]}</td>
-		<td>${loadedName[2]}</td>
-		<td>${loadedUser.birthday}</td>
-	`;
-	empTable.appendChild(loadedEmp);
-}
+// 	let loadedEmp = document.createElement('tr');
+// 	loadedEmp.classList.add('emp-note');
+// 	loadedEmp.id = counter;
+// 	loadedEmp.innerHTML = `
+// 		<td class="id">${loadedUser.id}</td>
+// 		<td>${loadedName[0]}</td>
+// 		<td>${loadedName[1]}</td>
+// 		<td>${loadedName[2]}</td>
+// 		<td>${loadedUser.birthday}</td>
+// 	`;
+// 	empTable.appendChild(loadedEmp);
+// }
 
 function loadUsersFromStorage() {
 	let storagedUsers = [];
-	empTable.innerHTML = '';
+	empTable.innerHTML = `
+	<tbody><tr>
+<th class="id">#</th>
+<th>Фамилия</th>
+<th>Имя</th>
+<th>Отчество</th>
+<th>Дата рождения</th>
+</tr>
+</tbody>
+`;
 	counter = 1;
 
 	for (let i = 1; i <= localStorage.length; i++) {
@@ -123,5 +142,5 @@ function loadUsersFromStorage() {
 		counter++;
 	}
 
-	return counter = storagedUsers.length+1;
+	return counter = storagedUsers.length + 1;
 }
