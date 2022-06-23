@@ -71,3 +71,8 @@ tr:nth-child(odd) {
 .day {
 	padding: 0px 10px;
 }
+
+.main-title {
+	margin-top: 10px;
+	font-size: 24px;
+}

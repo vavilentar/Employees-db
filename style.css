@@ -8,3 +8,8 @@
 .wrapper-off {
 	display: none;
 } */
+
+.main-title {
+	margin-top: 10px;
+	font-size: 24px;
+}
