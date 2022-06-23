@@ -1,0 +1,32 @@
+.login {
+	width: 200px;
+	height: 200px;
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 100px;
+	align-items: center;
+	text-align: center;
+}
+
+.username, .userpass{
+	width: 170px;
+	height: 30px;
+	border: 1px solid black;
+	margin: 2px 0;
+	padding: 0 5px;
+}
+
+.login-btn {
+	width: 75px;
+	height: 30px;
+	border: 1px solid black;
+	margin-top: 25px;
+	cursor: pointer;
+}
+
+.login-text {
+	width: 120px;
+	margin-bottom: 10px;
+}

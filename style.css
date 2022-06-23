@@ -2,5 +2,9 @@
 @import url(./styles/headerStyle.css);
 @import url(./styles/generalStyles.css);
 @import url(./timeWeather/timeWeatherStyles.css);
+@import url(./styles/loginStyles.css);
 /*Other styles*/
-
+/* 
+.wrapper-off {
+	display: none;
+} */
