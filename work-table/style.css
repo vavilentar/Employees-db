@@ -42,9 +42,13 @@ tr:nth-child(odd) {
 	}
 }
 
-.name, .place, .day, .inputDelete, button {
+.name, .place, .day, .inputDelete, button, .load-items, .load-item-input {
 	border: 1px solid black;
 	height: 30px;
+}
+
+.load-items{
+	width: 150px;
 }
 
 .inputDelete {
@@ -57,7 +61,7 @@ tr:nth-child(odd) {
 }
 
 .place, .name, .send {
-	width: 100px;
+	width: 120px;
 }
 
 .day {

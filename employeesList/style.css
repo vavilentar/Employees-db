@@ -25,7 +25,7 @@ td {
 }
 
 form {
-	margin-top: 10px;
+	margin-top: 5px;
 }
 
 tr:nth-child(odd) {
@@ -54,7 +54,6 @@ tr:nth-child(odd) {
 	width: 100px;
 }
 .load-item-Form{
-	margin-top: 10px;
 }
 .load-items{
 	width: 150px;
