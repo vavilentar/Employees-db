@@ -1,14 +1,17 @@
 const timeDiv = document.querySelector('.clock');
 const weatherDiv = document.querySelector('.weather');
+const bodyDiv = document.querySelector('.body_container');
 
-let updTime = setInterval(() => timeUpd(), 1000);
 timeUpd();
 weatherUpd();
+let updTime = setInterval(() => timeUpd(), 1000);
+
 
 function timeUpd() {
 	let time = new Date();
-
 	let dayOfWeek = time.getDay();
+	let date = time;
+
 	switch (dayOfWeek) {
 		case 1:
 			dayOfWeek = 'Понедельник';
@@ -48,28 +51,23 @@ function timeUpd() {
 	if (second < 10) {
 		second = '0' + second;
 	}
-	timeDiv.innerHTML = `
-		<h1>${dayOfWeek}, ${hour}:${minute}:${second}</h1>
-	`;
+		timeDiv.innerHTML = `
+		<h1 class="date-time">${dayOfWeek}, ${hour}:${minute}:${second}</h1><h2>${date.toLocaleDateString()}</h2>`;
 }
+
 function weatherUpd() {
 
 	let temp;
 	let location;
 	let condition;
-	let condIcon;
-	fetch('http://api.weatherapi.com/v1/current.json?key=f1c58ace0a7b44a1b8b92424222206&q=Moscow&aqi=no')
+	fetch('https://api.weatherapi.com/v1/current.json?key=f1c58ace0a7b44a1b8b92424222206&q=Москва&aqi=no&lang=ru')
 		.then((response) => response.json())
 		.then(function (data) {
 			location = data.location.name;
-			if (location == 'Moscow') location = 'Москва';
 			temp = data.current.temp_c;
 			condition = data.current.condition.text;
-			// condIcon = data.current.condition.icon; //Иконка погодных условий
 			weatherDiv.innerHTML = `
-			<p>${location}, ${temp}° ${condition}</p>
+			<h2 style="text-align: right;" >${location}, +${temp}°<br>${condition}</h2>
 		`;
 		});
 }
-
-//<img class="cond-icon" src="${condIcon}" alt=""> //Иконка погодных условий

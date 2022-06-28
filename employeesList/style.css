@@ -14,12 +14,12 @@ button {
 
 th {
 	background-color:aquamarine;
-	width: 150px;
+	width: auto;
 	height: 30px;
 }
 
 td {
-	width: 150px;
+	width: auto;
 	font-size: 0.8em;
 }
 
@@ -32,7 +32,7 @@ tr:nth-child(odd) {
 }
 
 .id {
-	width: 20px;
+	width: auto;
 }
 
 @media (max-width: 426px) {

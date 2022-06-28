@@ -4,17 +4,6 @@ const deleteBtn = document.querySelector('.deleteBtn');
 const loadBtn = document.querySelector('.load-items');
 const nameList = document.querySelector('.name');
 
-let counter = 1;
-
-loadPersonalNames();
-// loadLocalCopy();
-
-
-loadBtn.addEventListener('click', (e) => {
-	e.preventDefault();
-	loadPersonalNames();
-});
-
 deleteBtn.addEventListener('click', (e) => {
 	e.preventDefault();
 	const inputId = document.querySelector('.inputDelete');
@@ -44,7 +33,6 @@ sendBtn.addEventListener('click', (e) => {
 		alert('Введите дату и время');
 		dateTime.style.backgroundColor = '#ff5656';
 	}
-
 });
 
 function addTR(day, time, name, place) {
@@ -60,40 +48,67 @@ function addTR(day, time, name, place) {
 	`;
 	mainTable.appendChild(newTr);
 
-	// createLocalCopy('work', day, time, name, place);
 }
+
+const reqURL = 'https://jsonplaceholder.typicode.com/users';
+
+function sendRequest(method, url) {
+	const headers = {
+		'Content-Type': 'application/json'
+	}
+	return fetch(url, {
+			method: method,
+			headers: headers,
+		})
+		.then(response => {
+			return response.json()
+		})
+}
+
+sendRequest('GET', reqURL)
+	.then(data => {
+		for (let i = 0; i < data.length; i++) {
+			let loadedEmp = document.createElement('option');
+			loadedEmp.innerHTML = `
+			 			<option value=${data[i].name}>${data[i].name}</option>
+				`;
+			nameList.appendChild(loadedEmp);
+		}
+	})
 
 function deleteTR(id) {
 	const toDelete = document.getElementById(id);
 	toDelete.remove();
 }
 
-function loadPersonalNames() {
-	let storagedUsers = [];
-	nameList.innerHTML = '';
+//LEGACY 
 
-	for (let i = 1; i <= localStorage.length; i++) {
-		storagedUsers.push(JSON.parse(localStorage.getItem(i)));
-	}
+// function loadPersonalNames() {
+// 	let storagedUsers = [];
+// 	nameList.innerHTML = '';
 
-	if (storagedUsers.length > 0) {
+// 	for (let i = 1; i <= localStorage.length; i++) {
+// 		storagedUsers.push(JSON.parse(localStorage.getItem(i)));
+// 	}
 
-		for (let i = 0; i < storagedUsers.length; i++) {
-			let loadedUser = storagedUsers[i];
-			let loadedName = loadedUser.name;
+// 	if (storagedUsers.length > 0) {
 
-			let loadedEmp = document.createElement('option');
-			loadedEmp.innerHTML = `
-			<option value=${loadedName}>${loadedName}</option>
-	`;
-			nameList.appendChild(loadedEmp);
-		}
-	} else {
-		alert('Нет данных');
-	}
+// 		for (let i = 0; i < storagedUsers.length; i++) {
+// 			let loadedUser = storagedUsers[i];
+// 			let loadedName = loadedUser.name;
 
-	console.log(storagedUsers);
-}
+// 			let loadedEmp = document.createElement('option');
+// 			loadedEmp.innerHTML = `
+// 			<option value=${loadedName}>${loadedName}</option>
+// 	`;
+// 			nameList.appendChild(loadedEmp);
+// 		}
+// 	} else {
+// 		alert('Нет данных');
+// 	}
+
+// 	console.log(storagedUsers);
+// }
 
 // function createLocalCopy(id, date, time, emp, type) {
 // 	let workTime = {
@@ -137,3 +152,17 @@ function loadPersonalNames() {
 
 // 	return counter = storagedWorks.length + 1;
 // }
+
+
+// createLocalCopy('work', day, time, name, place);
+
+// let counter = 1;
+
+// loadPersonalNames();
+// loadLocalCopy();
+
+
+// loadBtn.addEventListener('click', (e) => {
+// 	e.preventDefault();
+// 	loadPersonalNames();
+// });
